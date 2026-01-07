@@ -1,11 +1,31 @@
+/* Right sidebar */
 .slidebar {
   position: fixed;
   top: 0;
   right: 0;
   width: 400px;
   height: 100vh;
-  background: linear-gradient(135deg, #0a004d, #002ab5);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #111111, #444444);
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.15);
   color: white;
-  padding: 20px;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.App {
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px;
+}
+.login-form {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 300px;
+  height: 600px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+  background: #939393;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
