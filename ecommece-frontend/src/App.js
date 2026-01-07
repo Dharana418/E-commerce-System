@@ -2,8 +2,10 @@ import './App.css';
 
 function App() {
   return (
-    <div id="root">
-    </div>
+    <>
+      <div className="slidebar">
+      </div>
+    </>
   );
 }
 
