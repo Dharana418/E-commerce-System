@@ -4,7 +4,6 @@ function App() {
   return (
     <div className="App">
       <div className="slidebar"></div>
-      <h1>ElectroHub</h1>
       <form className="login-form">
         <label for="username">Username</label><br></br>
         <input type="text" id="username" name="username" placeholder="Enter your username" /><br></br>
