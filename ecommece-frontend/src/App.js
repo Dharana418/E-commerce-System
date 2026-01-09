@@ -6,9 +6,30 @@ function App() {
       <div className="slidebar"></div>
       <form className="login-form">
         <div className="form-header">
-          <h1>Welcome to the Eshoply</h1>
+          <h1>Welcome to the EShoply</h1>
         </div>
-        
+        <div className="background">
+          <ul className="bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input 
