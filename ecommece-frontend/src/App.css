@@ -29,15 +29,15 @@
 .login-form label {
   font-size:large;
   display: block;
-  font-weight: bolder;
-  margin-top: 20px;
+  font-weight: bold;
+  margin-top: 40px;
   margin-bottom: 5px;
-
 }
 .login-form button {
+  font-family: 'Montserrat', sans-serif;
   width: 30%;
   padding: 12px;
-  background: linear-gradient(90deg, #9844ff,#6c80ff);
+ background: linear-gradient(90deg, #9844ff, #6c80ff);
   color: white;
   border: none;
   border-radius: 8px;
@@ -46,7 +46,7 @@
   font-size: medium;
   margin-top: 60px;
   box-shadow: 4px 4px 4px rgb(0, 0, 0);
-  button-hover: pointer;
+  text-transform: uppercase;
 }
 .form-footer p{
   position: relative;
@@ -54,5 +54,13 @@
   align-content: center;
   margin-left: 160px;
   font-size: medium;
-  font-weight: bolder;
+  font-weight:normal;
+}
+.form-header h1 {
+  margin: 0;
+  font-size: xx-large;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 80px;
+  font-family: "Comic Sans MS", "Segoe Script", "Brush Script MT", cursive;
 }

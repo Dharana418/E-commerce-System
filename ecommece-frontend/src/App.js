@@ -6,8 +6,7 @@ function App() {
       <div className="slidebar"></div>
       <form className="login-form">
         <div className="form-header">
-          <h1>Welcome</h1>
-          <p>E-Commerce Store</p>
+          <h1>Welcome to the Eshoply</h1>
         </div>
         
         <div className="form-group">
