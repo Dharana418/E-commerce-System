@@ -1,11 +1,15 @@
 .App {
-  position: relative;
+  position: fixed;
   background-color: #FAFAFA;
   min-height: 100vh;
   margin: 0;
-  padding: 40px;
   width: 100%;
   overflow: hidden;
+  display:block;
+  padding-left: 30%;
+  align-content: center;
+  font-variant: normal;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .slidebar {
   position: fixed;
@@ -18,13 +22,16 @@
 }
 .login-form input[type="text"], .login-form input[type="password"] {
   width: 30%;
-  height: 30px;
-  border-radius: 10px;
+  height: 40px;
+  box-shadow: 4px 4px 4px rgb(0, 0, 0);
+  border-radius: 8px;
 } 
 .login-form label {
   font-size:large;
   display: block;
   font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 5px;
 
 }
 .login-form button {
@@ -37,5 +44,15 @@
   cursor: pointer;
   font-weight: bolder;
   font-size: medium;
-  margin-top: 10px;
+  margin-top: 60px;
+  box-shadow: 4px 4px 4px rgb(0, 0, 0);
+  button-hover: pointer;
+}
+.form-footer p{
+  position: relative;
+  align-self: center;
+  align-content: center;
+  margin-left: 160px;
+  font-size: medium;
+  font-weight: bolder;
 }

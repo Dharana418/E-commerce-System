@@ -32,31 +32,10 @@ function App() {
           />
         </div>
 
-        <div className="form-options">
-          <label className="remember-me">
-            <input type="checkbox" name="remember" />
-            Remember me
-          </label>
-          <button 
-            type="button" 
-            className="forgot-link"
-            onClick={(e) => e.preventDefault()}
-          >
-            Forgot password?
-          </button>
-        </div>
-
         <button type="submit" className="login-btn">Login</button>
 
         <div className="form-footer">
           <p>Don't have an account? 
-            <button 
-              type="button" 
-              className="signup-link"
-              onClick={(e) => e.preventDefault()}
-            >
-              Sign up
-            </button>
           </p>
         </div>
       </form>
