@@ -105,8 +105,12 @@
   font-size: medium;
   font-weight:normal;
   display: flex;
-  font-weight: normal;
+  font-weight: bold;
   align-items: center;
+}
+.form-footer h5{
+  color:  #9844ff;
+  margin-left: 5px;
 }
 .form-header h1 {
   font-size: xx-large;
