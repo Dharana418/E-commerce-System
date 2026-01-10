@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
 }
 
 .image-slider {
@@ -99,22 +99,23 @@
   text-transform: uppercase;
 }
 .form-footer p{
-  position: relative;
-  align-self: center;
-  align-content: center;
-  margin-left: 160px;
+  align-self:center;
+  margin-left: 100px;
+  margin-top: 5px;
   font-size: medium;
-  font-weight:bolder;
+  font-weight:normal;
+  display: flex;
+  font-weight: normal;
+  align-items: center;
 }
 .form-header h1 {
-  margin: 0;
   font-size: xx-large;
-  font-weight: bold;
+  font-weight: bolder;
   color: #333;
-  margin-bottom: 80px;
   font-family: "Comic Sans MS", "Segoe Script", "Brush Script MT", cursive;
 }
 .login-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(108, 128, 255, 0.4);
 }
+

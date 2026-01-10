@@ -5,6 +5,7 @@ function Login() {
 
   return (
     <>
+    <div className="background">
       <div className="slidebar">
         <img 
           src={cloudinaryImageUrl} 
@@ -41,10 +42,10 @@ function Login() {
         <button type="submit" className="login-btn">Login</button>
 
         <div className="form-footer">
-          <p>Don't have an account? 
-          </p>
+          <p>Don't have an account?  <h5><u><span className="register-link">Register here</span></u></h5></p>
         </div>
       </form>
+      </div>
     </>
   );
 }
