@@ -10,8 +10,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  }
+  overflow: visible;
+}
+
+.slidebar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 .custom-shape-divider-bottom-1768175439 {
     position: absolute;
     bottom: 0;
@@ -25,7 +33,7 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 150px;
+    height: 200px;
 }
 
 .custom-shape-divider-bottom-1768175439 .shape-fill {
