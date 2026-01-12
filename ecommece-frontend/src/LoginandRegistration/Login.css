@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -23,29 +23,6 @@
   display: block;
   z-index: 1;
 }
-.custom-shape-divider-bottom-1768175439 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.custom-shape-divider-bottom-1768175439 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.8px);
-    height: 180px;
-    transform: scaleX(1);
-    z-index: -1;
-}
-
-.custom-shape-divider-bottom-1768175439 .shape-fill {
-    fill: rgba(167, 167, 167, 0.573);
-}
 .image-slider {
   position: relative;
   width: 100%;
@@ -54,6 +31,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: -1;
 }
 
 .slider-image {
@@ -63,6 +41,8 @@
   object-fit: contain;
   object-position: center;
   display: block;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .slider-dots {
@@ -134,10 +114,11 @@
   text-transform: uppercase;
 }
 .form-footer p{
+  position: absolute;
   align-self:center;
   margin-left: 100px;
-  margin-top: 5px;
-  font-size: medium;
+  margin-top: 45px;
+  font-size: small;
   font-weight:normal;
   display: flex;
   font-weight: bold;
@@ -146,6 +127,7 @@
 .form-footer h5{
   color:  #9844ff;
   margin-left: 5px;
+  font-size: small;
 }
 .form-header h1 {
   font-size: xx-large;
