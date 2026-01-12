@@ -1,4 +1,5 @@
 import './Login.css';
+import './Registration.jsx'
 
 function Login() {
   const cloudinaryImageUrl = 'https://res.cloudinary.com/dttczxa2i/image/upload/ChatGPT_Image_Jan_12_2026_09_32_37_PM_tyycuu';
@@ -26,7 +27,7 @@ function Login() {
         <div className="form-group">
           <label htmlFor="username">Email</label>
           <input 
-            type="text" 
+            type="text"
             id="username" 
             name="username" 
             placeholder="Enter your email"
@@ -48,7 +49,7 @@ function Login() {
         <button type="submit" className="login-btn">Login</button>
 
         <div className="form-footer">
-          <p>Don't have an account?  <h5><u><span className="register-link">Register here</span></u></h5></p>
+          <p>Don't have an account?  <h5><u><span className="register-link"><a href="../Registration">Register here</a></span></u></h5></p>
         </div>
       </form>
     

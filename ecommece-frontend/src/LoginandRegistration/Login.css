@@ -5,15 +5,31 @@
   width: 450px;
   max-width: 100%;
   height: 100vh;
-  background-color: transparent;
+  background: linear-gradient(135deg, rgba(152, 68, 255, 0.1), rgba(108, 128, 255, 0.1));
+  backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   z-index: 1;
-  border: 2px solid #ccc;
-  border-radius: 16px;
+  border: 2px solid rgba(152, 68, 255, 0.3);
+  border-radius: 30px 0 0 30px;
+  box-shadow: -10px 0 40px rgba(152, 68, 255, 0.2),
+              inset 0 0 50px rgba(255, 255, 255, 0.05);
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .custom-shape-divider-bottom-1768234483 {
     position: absolute;
@@ -44,7 +60,54 @@
   object-position: center;
   display: block;
   z-index: 1;
-  
+  border-radius: 30px 0 0 30px;
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.slidebar-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.15);
+}
+
+.slidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(152, 68, 255, 0.1) 0%, 
+    transparent 50%, 
+    rgba(108, 128, 255, 0.15) 100%);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 30px 0 0 30px;
+}
+
+.slidebar::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.3;
+  }
 }
 
 .slider-dots {
@@ -142,7 +205,6 @@
   font-weight: bolder;
   color: #000000;
   font-family: "Comic Sans MS", "Segoe Script", "Brush Script MT", cursive;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.336);
   margin-right: 400px;
   margin-top: auto;
   margin-bottom: 50px;  
