@@ -1,8 +1,6 @@
 import usermodel from '../models/usermodel.js';
 import asyncHandler from 'express-async-handler';
-import jwt from 'jsonwebtoken';
-
-// Generate JWT Token   
+import jwt from 'jsonwebtoken';  
 
 
 // Register a new user
@@ -36,6 +34,8 @@ export const loginUser = asyncHandler(async (req, res) => {
       throw new Error('Invalid email or password');
     }
 });
-const generateToken = (userId) => {
+// Generate JWT Token
+export const generateToken = (userId) => {
   return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '30d' });
-};
+}
+
