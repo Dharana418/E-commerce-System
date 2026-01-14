@@ -1,7 +1,7 @@
 import './Login.css';
-import './Registration.jsx'
+import registration from'./Registration.jsx'
 
-function Login() {
+function Login({ onNavigateToRegister }) {
   const cloudinaryImageUrl = 'https://res.cloudinary.com/dttczxa2i/image/upload/ChatGPT_Image_Jan_12_2026_09_32_37_PM_tyycuu';
 
   return (
@@ -49,7 +49,7 @@ function Login() {
         <button type="submit" className="login-btn">Login</button>
 
         <div className="form-footer">
-          <p>Don't have an account?  <h5><u><span className="register-link"><a href="../Registration">Register here</a></span></u></h5></p>
+          <p>Don't have an account?  <h5><u><span className="register-link" onClick={onNavigateToRegister} style={{cursor: 'pointer'}}>Register here</span></u></h5></p>
         </div>
       </form>
     

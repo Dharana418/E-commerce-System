@@ -27,3 +27,31 @@
   z-index: 100;
 }
 
+/* Mobile responsiveness (below 768px) */
+@media (max-width: 768px) {
+  .App {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+  
+  .slidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 40vh;
+  }
+}
+
+/* Small mobile devices (below 480px) */
+@media (max-width: 480px) {
+  .App {
+    min-height: 100vh;
+  }
+  
+  .slidebar {
+    min-height: 35vh;
+  }
+}
+
