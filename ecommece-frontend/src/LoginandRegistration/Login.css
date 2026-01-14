@@ -146,7 +146,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
+  gap: 20px;
 }
 
 
@@ -245,10 +245,11 @@
     font-size: 16px;
   }
 
-  .form-header h1 {
+  .login-form .form-header h1 {
+    position: fixed;
     font-size: 20px;
-    margin-right: 0;
-    margin-bottom: 15px;
+    margin-bottom: 55px;
+    margin-right: auto;
   }
 
   .login-form label {

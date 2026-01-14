@@ -1,6 +1,5 @@
 import './Registration.css';
 import { useState } from 'react';
-import { motion } from "motion/react";
 
 function Registration({ onNavigateToLogin }) {
   const [formData, setFormData] = useState({
