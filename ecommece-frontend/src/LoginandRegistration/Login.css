@@ -141,7 +141,7 @@
 
 .login-form {
   position: fixed;
-  top: 80px;
+  top: 180px;
   left: 150px;
   display: flex;
   flex-direction: column;
@@ -213,8 +213,13 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(108, 128, 255, 0.4);
 }
+.login-form .form-header{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-/* Mobile responsiveness (below 768px) */
 @media (max-width: 768px) {
   .slidebar {
     position: relative;
@@ -246,10 +251,10 @@
   }
 
   .login-form .form-header h1 {
-    position: fixed;
+    position: relative;
     font-size: 20px;
-    margin-bottom: 55px;
-    margin-right: auto;
+    margin-bottom: 155px;
+    margin-right:inherit;
   }
 
   .login-form label {
@@ -276,8 +281,6 @@
     font-size: 12px;
   }
 }
-
-/* Small mobile devices (below 480px) */
 @media (max-width: 480px) {
   .slidebar {
     min-height: 200px;
@@ -295,6 +298,7 @@
   }
 
   .form-header h1 {
+    position: relative;
     font-size: 18px;
     margin-bottom: 10px;
   }
