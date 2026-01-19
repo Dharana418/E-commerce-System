@@ -45,11 +45,11 @@
     position: relative;
     display: block;
     width: calc(120% + 1.3px);
-    height: 160px;
+    height: 180px;
 }
 
 .custom-shape-divider-bottom-1768234483 .shape-fill {
-    fill: #000000ac;
+    fill: linear-gradient(90deg,  #7300ff, #0022ff);
 }
 
 .slidebar-image {
@@ -216,70 +216,8 @@
 .login-form .form-header{
   position: fixed;
   top: 20px;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-  .slidebar {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 100%;
-    height: auto;
-    min-height: 250px;
-    border-radius: 0;
-  }
-
-  .custom-shape-divider-bottom-1768234483 svg {
-    height: 100px;
-  }
-
-  .login-form {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 90%;
-    max-width: 100%;
-    margin: 15px auto;
-    padding: 15px;
-  }
-
-  .login-form input[type="text"], .login-form input[type="password"] {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .login-form .form-header h1 {
-    position: relative;
-    font-size: 20px;
-    margin-bottom: 155px;
-    margin-right:inherit;
-  }
-
-  .login-form label {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .login-form button {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-    margin-top: 15px;
-  }
-
-  .form-footer p {
-    position: relative;
-    align-self: auto;
-    margin-left: 0;
-    margin-top: 15px;
-    font-size: 12px;
-  }
-
-  .form-footer h5 {
-    font-size: 12px;
-  }
 }
 @media (max-width: 480px) {
   .slidebar {
