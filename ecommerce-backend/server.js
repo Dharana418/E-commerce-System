@@ -16,8 +16,7 @@ if (!MONGODB_URI) {
 app.use(express.json());
 app.use(cors());
 app.use("/api/users", userroute);
-app.use("/api", productroute);
-
+app.use("/api/products", productroute);
 app.get("/", (req, res) => {
   res.status(200).send("E-commerce Backend is Running 🚀");
 });

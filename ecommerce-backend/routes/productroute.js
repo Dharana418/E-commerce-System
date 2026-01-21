@@ -1,13 +1,13 @@
-const express=require('express');
-const { createproduct, getallproducts, getproductdetails, updateproduct, deleteproduct, createproductreview, getproductreviews, deleteproductreview } = require('../controllers/productcontroller');
-const { isauthenticateduser, authorizeRoles } = require('../middlewares/authenticate');
+import { createproduct, getallproducts, getproductdetails } from '../controllers/productcontroller.js';
+import express from "express";
 
 const router=express.Router();
 
-router.route('/product/new').post(isauthenticateduser,authorizeRoles('admin'),createproduct);
+router.route('/product/new').post(createproduct);
 
 //get all products
 router.route('/products').get(getallproducts);
 //get product details
 router.route('/product/:id').get(getproductdetails);
 
+export default router;
