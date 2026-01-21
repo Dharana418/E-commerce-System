@@ -24,6 +24,7 @@
     transform: translateX(-50%);
     top: 10px;
 }
+
 @media (max-width: 768px) {
     .custom-shape-divider-bottom-1768300002 {
         position: relative;
@@ -47,13 +48,16 @@
         position: fixed;
     }
 
-    .login-form {
-        position: relative;
-        width: 90%;
-        max-width: 100%;
-        margin: 15px auto;
-        padding: 15px;
-    }
+   .login-form {
+    position: absolute;
+    width: 90%;
+    max-width: 100%;
+    margin: 15px auto;
+    padding: 15px;
+    max-height: 90vh;   /* limits height */
+    overflow-y: auto;   /* enables scrollbar */
+}
+
 
     .form-group input {
         font-size: 16px;
@@ -63,44 +67,5 @@
     .login-btn {
         font-size: 14px;
         padding: 10px;
-    }
-}
-
-/* Small mobile devices (below 480px) */
-@media (max-width: 480px) {
-    .custom-shape-divider-bottom-1768300002 svg {
-        width: 250%;
-        height: 200px;
-    }
-
-    .form-header {
-        margin-bottom: 10px;
-        padding: 0 10px;
-    }
-
-    .form-header h1 {
-        font-size: 20px;
-    }
-
-    .login-form {
-        width: 95%;
-        padding: 12px;
-        margin: 10px auto;
-        gap: 8px;
-    }
-
-    .form-group label {
-        font-size: 12px;
-    }
-
-    .form-group input {
-        height: 35px;
-        font-size: 13px;
-        padding: 7px;
-    }
-
-    .login-btn {
-        font-size: 13px;
-        padding: 8px;
     }
 }

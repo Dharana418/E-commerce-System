@@ -7,14 +7,12 @@ function Registration({ onNavigateToLogin }) {
     email: '',
     password: '',
     confirmPassword: '',
-    address:'',
-    phonenumber:'',
-    Role:''
+    address: '',
+    phonenumber: '',
+    role: 'customer'
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-
-  const cloudinaryImageUrl = 'https://res.cloudinary.com/dttczxa2i/image/upload/ChatGPT_Image_Jan_12_2026_09_32_37_PM_tyycuu';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +42,10 @@ function Registration({ onNavigateToLogin }) {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          password: formData.password
+          password: formData.password,
+          address: formData.address,
+          phonenumber: formData.phonenumber,
+          role: formData.role
         })
       });
 
@@ -52,7 +53,7 @@ function Registration({ onNavigateToLogin }) {
 
       if (response.ok) {
         setMessage('Registration successful! Redirecting to login...');
-        setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+        setFormData({ name: '', email: '', password: '', confirmPassword: '', address: '', phonenumber: '', role: 'customer' });
         setTimeout(() => {
           onNavigateToLogin();
         }, 2000);
@@ -88,7 +89,7 @@ function Registration({ onNavigateToLogin }) {
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input 
-            type="text"
+            type="email"
             id="email" 
             name="email" 
             placeholder="Enter your email"
@@ -122,6 +123,48 @@ function Registration({ onNavigateToLogin }) {
             onChange={handleChange}
             required
           />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
+          <input 
+            type="text" 
+            id="address" 
+            name="address" 
+            placeholder="Enter your address"
+            value={formData.address}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phonenumber">Phone Number</label>
+          <input 
+            type="tel" 
+            id="phonenumber" 
+            name="phonenumber" 
+            placeholder="Enter your phone number"
+            value={formData.phonenumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="role">Role</label>
+          <select 
+            id="role" 
+            name="role" 
+            value={formData.role}
+            onChange={handleChange}
+            required
+          >
+            <option value="customer">Customer</option>
+            <option value="seller">Seller</option>
+            <option value="admin">Admin</option>
+            <option value="manager">Manager</option>
+          </select>
         </div>
 
         {message && <p className="form-message">{message}</p>}
