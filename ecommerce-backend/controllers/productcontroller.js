@@ -32,3 +32,37 @@ export const getproductdetails=asyncHandler(async(req,res,next)=>{
         product
     })
 })
+
+export const updateproduct=asyncHandler(async(req,res,next)=>{
+    let product=await Product.findById(req.params.id);
+    if(!product){
+        return res.status(404).json({
+            success:false,
+            message:'product not found'
+        })
+    }
+    product=await Product.findByIdAndUpdate(req.params.id,req.body,{
+        new:true,
+        runValidators:true,
+        useFindAndModify:false
+    });
+    res.status(200).json({
+        success:true,
+        product
+    })
+})
+
+export const deleteproduct=asyncHandler(async(req,res,next)=>{
+    const product=await Product.findById(req.params.id);
+    if(!product){
+        return res.status(404).json({
+            success:false,
+            message:'product not found'
+        })
+    }
+    await product.remove();
+    res.status(200).json({
+        success:true,
+        message:'product deleted successfully'
+    })
+})
