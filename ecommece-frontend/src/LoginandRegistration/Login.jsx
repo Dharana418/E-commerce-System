@@ -6,7 +6,7 @@ function Login({ onNavigateToRegister }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const cloudinaryImageUrl = "https://res.cloudinary.com/dttczxa2i/image/upload/ChatGPT_Image_Jan_12_2026_09_32_37_PM_tyycuu";
+  const cloudinaryImageUrl = "https://res.cloudinary.com/dttczxa2i/image/upload/3d-rendering-cartoon-shopping-cart_sxo3yi.png";
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
   const handleChange = (e) => {
@@ -40,20 +40,14 @@ function Login({ onNavigateToRegister }) {
   return (
     <>
     <div className="background">
-      <div class="custom-shape-divider-bottom-1768234483">
-</div>
-      <div className="wavy"></div>
-    </div>
+    
     <div className="slidebar">
-      <img 
-          src={cloudinaryImageUrl} 
-          alt="EShoply Product" 
-          className="slidebar-image"
-      />
-      </div>
+      <img src={cloudinaryImageUrl} alt="Login Visual" className="login-image" />
+    </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-header">
-          <h1>Welcome to the EShoply</h1>
+        <h1>  Welcome to the Eshoply
+        </h1>
         </div>
         {error && <div className="form-error">{error}</div>}
         <div className="form-group">
@@ -90,6 +84,7 @@ function Login({ onNavigateToRegister }) {
           <p>Don't have an account?  <h5><u><span className="register-link" onClick={registration} style={{cursor: 'pointer'}}>Register here</span></u></h5></p>
         </div>
       </form>
+      </div>
     
     </>
   );
