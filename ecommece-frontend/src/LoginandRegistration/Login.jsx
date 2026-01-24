@@ -1,17 +1,26 @@
 import './Login.css';
 import { useState } from "react";
-import registration from'./Registration.jsx'
+import { useHistory } from "react-router-dom";
 
 function Login({ onNavigateToRegister }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const history = useHistory();
   const cloudinaryImageUrl = "https://res.cloudinary.com/dttczxa2i/image/upload/3d-rendering-cartoon-shopping-cart_sxo3yi.png";
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleNavigateToRegister = () => {
+    if (onNavigateToRegister) {
+      onNavigateToRegister();
+    } else {
+      history.push('/register');
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -81,7 +90,7 @@ function Login({ onNavigateToRegister }) {
         </button>
 
         <div className="form-footer">
-          <p>Don't have an account?  <h5><u><span className="register-link" onClick={registration} style={{cursor: 'pointer'}}>Register here</span></u></h5></p>
+          <p>Don't have an account?  <h5><u><span className="register-link" onClick={handleNavigateToRegister} style={{cursor: 'pointer'}}>Register here</span></u></h5></p>
         </div>
       </form>
       </div>

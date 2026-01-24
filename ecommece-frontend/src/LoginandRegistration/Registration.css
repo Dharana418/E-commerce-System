@@ -1,71 +1,140 @@
-.custom-shape-divider-bottom-1768300002 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+.registration-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: transparent;
+  height: 100rem;
+}
+.registration-slidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 550px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
 }
 
-.custom-shape-divider-bottom-1768300002 svg {
-    position: relative;
-    display: block;
-    width: calc(155% + 1.3px);
-    height: 648px;
+.registration-image {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: 1;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+html, body {
+  height: 100rem;
+  overflow-y: scroll;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height:100lh;
+  max-width: 650px;
+  margin: 30px auto 40px;
+  padding: 25px 30px;
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 30px 58px 40px rgb(0, 0, 0);
+  pointer-events: auto;
+}
+.registration-form-header {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.custom-shape-divider-bottom-1768300002 .shape-fill {
-    fill: #9d9d9da5;
+.registration-form-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0a3c49;
+  margin-bottom: 5px;
+}
+.registration-form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 15;
+  pointer-events: auto;
 }
 
-.form-header{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10px;
+.registration-form-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
 }
 
-@media (max-width: 768px) {
-    .custom-shape-divider-bottom-1768300002 {
-        position: relative;
-        margin-bottom: 20px;
-    }
+.registration-form-group input,
+.registration-form-group select {
+  width: 100%;
+  height: 20px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  pointer-events: auto;
+  cursor: text;
 
-    .custom-shape-divider-bottom-1768300002 svg {
-        width: 200%;
-        height: 300px;
-    }
-
-    .form-header {
-        position: relative;
-        left: auto;
-        transform: none;
-        top: auto;
-        margin-bottom: 15px;
-    }
-
-    .form-header h1 {
-        position: fixed;
-    }
-
-   .login-form {
-    position: absolute;
-    width: 90%;
-    max-width: 100%;
-    margin: 15px auto;
-    padding: 15px;
-    max-height: 90vh;   /* limits height */
-    overflow-y: auto;   /* enables scrollbar */
 }
 
-
-    .form-group input {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .login-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
+.registration-form-group input::placeholder {
+  color: rgb(0, 0, 0);
 }
+.registration-btn {
+  margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg, #2f9ec4, #0a3c49);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.registration-btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(19, 107, 169, 0.6);
+}
+
+.registration-form-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.registration-form-footer p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.registration-form-footer span {
+  margin-left: 6px;
+  color: #2f9ec4;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.registration-form-footer span:hover {
+  color: #0a3c49;
+}
+
