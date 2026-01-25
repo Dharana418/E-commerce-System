@@ -4,8 +4,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  overflow: hidden;
   background:rgba(225, 225, 225, 0.675);
 }
 
@@ -15,9 +13,8 @@
   right: 0;
   width: 550px;
   height: 100vh;
-  overflow: hidden;
-  z-index: 0;
   background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+  overflow: hidden;
 }
 
 .slidebar-image {
@@ -26,11 +23,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
-  z-index: 1;
   border-radius: 30px 0 0 30px;
-  filter: brightness(0.9) contrast(1.1);
-  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.7);
+  overflow: hidden;
 }
 
 .login-image {
@@ -41,46 +36,30 @@
   object-position: center;
   display: block;
   z-index: 1;
-  filter: brightness(0.9) contrast(1.05);
-  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .login-form {
   position: fixed;
-  display: flex;
   flex-direction: column;
-  translate: translate(-20%,-30%) ;
+  translate: translate(20%,30%) ;
   left: calc(
     30% - 150px
   );
   width: 100%;
-  gap: 20px;
-  top: 30%;
-  z-index: 10;
-  pointer-events: auto;
+  gap: 25px;
+  top: 20%;
 }
-.login-form input[type="text"], .login-form input[type="password"] {
+.login-form input[type="email"], .login-form input[type="password"] {
   width: 30%;
-  height: 40px;
   border-radius: 4px;
   border: 2px solid #000000;
   box-shadow: 5px 5px 5px rgb(0, 0, 0);
   font-size: small;
   font-weight: bold;
   font-display: block;
-  pointer-events: auto;
-  cursor: text;
-  position: relative;
-  z-index: 15;
-}
-.form-group {
-  position: relative;
-  z-index: 15;
-  pointer-events: auto;
-}
-.login-form input[type="text"]:focus, .login-form input[type="password"]:focus {
-  border-color: #000000;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.405);
+  color: #000000;
+  height: 50px;
+  margin-top: 10px;
 }
 
 
@@ -131,30 +110,50 @@
   font-weight: bolder;
 
 }
+.switch-auth {
+  margin-top: 20px;
+  font-weight: bolder;
+  margin-left: 120px;
+  font-size: small;
+}
+.switch-auth p{
+  position:absolute;
+  font-size: 14px;
+  color: #333;
+  font-weight: bolder;
+  margin-bottom: 8px;
+  font-size: small;
+}
+.switch-auth span {
+  color: #007d90;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 12px;
+  font-size: small;
+  margin-left: 2px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
 .form-header {
+  position: relative;
   text-align: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   
 }
 .form-header h1 {
   position: fixed;
-  font-size: xx-large;
+  font-size: 50px;
   font-weight: bolder;
   color: #000000;
-  font-family: "Comic Sans MS", "Segoe Script", "Brush Script MT", cursive;
+  font-family:"Brush Script MT", cursive;
   margin-top: auto;
   margin-bottom: 50px;  
-  left: 13%;
+  left: 25%;
   top: 45px;
+  align-items: center;
 }
-.login-btn:hover {
+.login-form button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(19, 107, 169, 0.533);
-}
-.login-form .form-header{
-  position: fixed;
-  top: 20px;
-  left: 60%;
-  transform: translateX(-50%);
 }

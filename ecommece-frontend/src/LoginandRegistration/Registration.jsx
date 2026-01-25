@@ -11,7 +11,7 @@ function Registration({ onNavigateToLogin }) {
     confirmPassword: '',
     address: '',
     phonenumber: '',
-    role: 'customer'  // safe default
+    role: 'customer'  
   });
 
   const [loading, setLoading] = useState(false);
@@ -92,6 +92,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="name">Name</label>
+          <br/>
           <input
             type="text"
             id="name"
@@ -105,6 +106,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="email">Email</label>
+          <br/>
           <input
             type="email"
             id="email"
@@ -118,6 +120,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="password">Password</label>
+          <br/>
           <input
             type="password"
             id="password"
@@ -132,6 +135,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="confirmPassword">Confirm Password</label>
+          <br/>
           <input
             type="password"
             id="confirmPassword"
@@ -146,6 +150,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="address">Address</label>
+          <br/>
           <input
             type="text"
             id="address"
@@ -159,6 +164,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="phonenumber">Phone Number</label>
+          <br/>
           <input
             type="tel"
             id="phonenumber"
@@ -174,6 +180,7 @@ function Registration({ onNavigateToLogin }) {
 
         <div className="registration-form-group">
           <label htmlFor="role">Role</label>
+          <br/>
           <select
             id="role"
             name="role"
@@ -183,6 +190,8 @@ function Registration({ onNavigateToLogin }) {
           >
             <option value="customer">Customer</option>
             <option value="seller">Seller</option>
+            <option value="admin">Admin</option>
+            <option value="delivery">Manager</option>
           </select>
         </div>
 

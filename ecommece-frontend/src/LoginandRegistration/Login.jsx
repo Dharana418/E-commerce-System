@@ -1,4 +1,4 @@
-import './Login.css';
+import "./Login.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -6,9 +6,14 @@ function Login({ onNavigateToRegister }) {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   const history = useHistory();
-  const cloudinaryImageUrl = "https://res.cloudinary.com/dttczxa2i/image/upload/3d-rendering-cartoon-shopping-cart_sxo3yi.png";
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+
+  const cloudinaryImageUrl =
+    "https://res.cloudinary.com/dttczxa2i/image/upload/3d-rendering-cartoon-shopping-cart_sxo3yi.png";
+
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +24,7 @@ function Login({ onNavigateToRegister }) {
     if (onNavigateToRegister) {
       onNavigateToRegister();
     } else {
-      history.push('/register');
+      history.push("/register");
     }
   };
 
@@ -27,18 +32,21 @@ function Login({ onNavigateToRegister }) {
     e.preventDefault();
     setError("");
     setLoading(true);
+
     try {
       const res = await fetch(`${API_BASE_URL}/api/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: form.email, password: form.password }),
+        body: JSON.stringify(form),
       });
+
+      const data = await res.json();
+
       if (!res.ok) {
-        const data = await res.json().catch(() => ({ message: "Login failed" }));
         throw new Error(data.message || "Login failed");
       }
-      const data = await res.json();
-      console.log("Logged in:", data); 
+
+      console.log("Logged in:", data);
     } catch (err) {
       setError(err.message || "Unable to login");
     } finally {
@@ -48,53 +56,56 @@ function Login({ onNavigateToRegister }) {
 
   return (
     <>
-    <div className="background">
-    
-    <div className="slidebar">
-      <img src={cloudinaryImageUrl} alt="Login Visual" className="login-image" />
-    </div>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="form-header">
-        <h1>  Welcome to the Eshoply
-        </h1>
-        </div>
-        {error && <div className="form-error">{error}</div>}
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input 
-            type="text"
-            id="email" 
-            name="email" 
-            placeholder="Enter your email"
-            value={form.email}
-            onChange={handleChange}
-            required
+      <div className="background">
+        <div className="slidebar">
+          <img
+            src={cloudinaryImageUrl}
+            alt="Login Visual"
+            className="login-image"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input 
-            type="password" 
-            id="password" 
-            name="password" 
-            placeholder="Enter your password"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="form-header">
+            <h1>Welcome to Eshoply</h1>
+          </div>
 
-        <button type="submit" className="login-btn" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
+          {error && <div className="error-message">{error}</div>}
 
-        <div className="form-footer">
-          <p>Don't have an account?  <h5><u><span className="register-link" onClick={handleNavigateToRegister} style={{cursor: 'pointer'}}>Register here</span></u></h5></p>
-        </div>
-      </form>
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
+
+          <p className="switch-auth">
+            Don’t have an account?{" "}
+            <span onClick={handleNavigateToRegister}><u>Register</u></span>
+          </p>
+        </form>
       </div>
-    
     </>
   );
 }
